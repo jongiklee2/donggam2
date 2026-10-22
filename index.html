@@ -1,0 +1,911 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142b35">
+  <meta name="description" content="기록으로 생각을 구조화하고, 생각으로 변화를 설계하다. 동감은 기록의 기술부터 사고력 훈련, 기획력과 문제 해결까지 연결하는 실천형 강사 브랜드입니다.">
+  <meta name="keywords" content="기록 강사, 기록 교육, 기록과 사고, 사고력 훈련, 기획력 교육, 문제 해결 교육, 성인 대상 기록 강의, 평생교육 강의, 기업교육 강사, 다이어리 활용법, 목표 관리 교육">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="동감 | 기록과 사고를 연결하는 강의">
+  <meta property="og:description" content="기록의 기술부터 사고력 훈련까지. 생각을 발견하고 구조화해 실행으로 연결합니다.">
+  <title>동감 | 기록과 사고를 연결하는 강의</title>
+  <style>
+    :root {
+      --navy: #142b35;
+      --navy-2: #203e48;
+      --green: #345d50;
+      --cyan: #75c8d0;
+      --gold: #c7a96b;
+      --ivory: #f7f5ef;
+      --paper: #fffefa;
+      --ink: #202d30;
+      --muted: #607074;
+      --line: #dce3df;
+      --pale-green: #e8efeb;
+      --pale-cyan: #e5f4f4;
+      --shadow: 0 24px 70px rgba(20, 43, 53, .10);
+      --radius: 22px;
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      line-height: 1.72; letter-spacing: -.018em; word-break: keep-all;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { cursor: pointer; }
+    :focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; }
+    .skip-link { position: absolute; left: 12px; top: -60px; padding: 10px 14px; background: var(--navy); color: white; z-index: 1000; border-radius: 8px; }
+    .skip-link:focus { top: 12px; }
+    .container { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--green); font-size: .77rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 24px; height: 1px; background: var(--gold); display: inline-block; }
+    .section { padding: 112px 0; }
+    .section-head { max-width: 720px; margin-bottom: 46px; }
+    .section-head h2 { margin: 15px 0 14px; color: var(--navy); font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.25; letter-spacing: -.055em; font-weight: 800; }
+    .section-head p { margin: 0; color: var(--muted); font-size: 1.05rem; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 13px 21px; border: 1px solid transparent; border-radius: 999px; font-size: .93rem; font-weight: 750; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: white; background: var(--navy); box-shadow: 0 8px 22px rgba(20,43,53,.14); }
+    .btn-primary:hover { background: var(--green); }
+    .btn-light { color: var(--navy); background: var(--paper); border-color: #d3ddd8; }
+    .btn-light:hover { border-color: var(--green); }
+    .btn-gold { background: var(--gold); color: var(--navy); }
+    .arrow { font-size: 1.15em; line-height: 1; }
+
+    /* Header */
+    .site-header { position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(220,227,223,.8); background: rgba(255,254,250,.92); backdrop-filter: blur(16px); }
+    .nav-wrap { display: flex; align-items: center; justify-content: space-between; min-height: 76px; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .brand-mark { display: grid; place-items: center; width: 37px; height: 37px; border-radius: 12px 12px 12px 3px; color: var(--ivory); background: var(--navy); font-family: Georgia, serif; font-size: 1.08rem; font-weight: 700; letter-spacing: -.08em; }
+    .brand-name { display: block; font-size: 1.12rem; font-weight: 850; letter-spacing: -.06em; color: var(--navy); line-height: 1.1; }
+    .brand-sub { display: block; margin-top: 4px; font-size: .62rem; color: var(--muted); letter-spacing: .14em; text-transform: uppercase; }
+    .nav-menu { display: flex; align-items: center; gap: clamp(16px, 2.5vw, 34px); margin-left: auto; }
+    .nav-menu a { color: #46575a; font-size: .85rem; font-weight: 650; transition: color .2s; }
+    .nav-menu a:hover { color: var(--green); }
+    .nav-cta { min-height: 42px; padding: 9px 17px; font-size: .83rem; }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: var(--paper); color: var(--navy); border-radius: 12px; width: 44px; height: 44px; align-items: center; justify-content: center; }
+
+    /* Hero */
+    .hero { position: relative; overflow: hidden; padding: 88px 0 86px; background: var(--ivory); }
+    .hero::before { content: ""; position: absolute; width: 560px; height: 560px; right: -180px; top: -260px; border: 1px solid rgba(52,93,80,.14); border-radius: 50%; box-shadow: 0 0 0 48px rgba(52,93,80,.025), 0 0 0 105px rgba(52,93,80,.02); }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1.04fr .96fr; align-items: center; gap: clamp(42px, 7vw, 95px); }
+    .hero-copy { padding: 14px 0 22px; }
+    .hero-kicker { margin-bottom: 22px; color: var(--green); font-size: .79rem; letter-spacing: .14em; font-weight: 850; }
+    .hero h1 { margin: 0; color: var(--navy); font-size: clamp(2.8rem, 5.1vw, 4.65rem); line-height: 1.17; letter-spacing: -.075em; font-weight: 850; }
+    .hero h1 em { color: var(--green); font-style: normal; position: relative; white-space: nowrap; }
+    .hero h1 em::after { content: ""; position: absolute; height: 7px; border-radius: 5px; bottom: 1px; left: 0; right: 0; z-index: -1; background: rgba(199,169,107,.45); }
+    .hero-lead { margin: 26px 0 14px; max-width: 550px; font-size: 1.1rem; font-weight: 650; color: #34474c; line-height: 1.8; }
+    .hero-desc { max-width: 510px; margin: 0; color: var(--muted); font-size: .95rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 31px; }
+    .hero-note { display: flex; align-items: center; gap: 12px; margin-top: 32px; color: var(--muted); font-size: .78rem; }
+    .hero-note::before { content: ""; width: 35px; height: 1px; background: var(--gold); }
+    .hero-visual { position: relative; min-height: 465px; display: grid; place-items: center; }
+    .visual-orbit { position: absolute; width: 405px; height: 405px; border: 1px solid rgba(52,93,80,.2); border-radius: 50%; transform: rotate(-19deg); }
+    .visual-orbit::before, .visual-orbit::after { content: ""; position: absolute; inset: 28px; border: 1px dashed rgba(52,93,80,.21); border-radius: 50%; }
+    .visual-orbit::after { inset: 65px; border-style: solid; border-color: rgba(199,169,107,.5); }
+    .orbit-dot { position: absolute; width: 11px; height: 11px; border-radius: 50%; background: var(--gold); top: 48px; right: 75px; box-shadow: 0 0 0 7px rgba(199,169,107,.13); }
+    .note-sheet { position: relative; z-index: 2; width: min(340px, 86%); padding: 29px 29px 26px; background: rgba(255,254,250,.96); border: 1px solid #e3e3da; border-radius: 4px 18px 18px 18px; box-shadow: var(--shadow); transform: rotate(-3deg); }
+    .sheet-top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 18px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: .67rem; letter-spacing: .09em; }
+    .sheet-symbol { color: var(--gold); font-size: 1.25rem; }
+    .sheet-title { margin: 20px 0 18px; font-family: Georgia, "Noto Serif KR", serif; color: var(--navy); font-weight: 800; font-size: 1.55rem; line-height: 1.35; letter-spacing: -.05em; }
+    .sheet-row { display: flex; align-items: center; gap: 11px; margin-top: 13px; color: #59686a; font-size: .78rem; }
+    .sheet-num { display: grid; place-items: center; flex: 0 0 24px; height: 24px; border-radius: 50%; background: var(--pale-green); color: var(--green); font-size: .68rem; font-weight: 800; }
+    .sheet-line { height: 1px; flex: 1; background: #e2e6e1; }
+    .sheet-tag { display: inline-flex; margin-top: 20px; padding: 6px 10px; border-radius: 4px; color: var(--green); background: var(--pale-green); font-size: .7rem; font-weight: 800; }
+    .floating-card { position: absolute; z-index: 3; right: -3px; bottom: 38px; max-width: 195px; padding: 15px 17px; background: var(--navy); color: white; border-radius: 13px 13px 3px 13px; box-shadow: 0 14px 30px rgba(20,43,53,.18); transform: rotate(4deg); }
+    .floating-card small { display: block; color: #b7d4d0; font-size: .65rem; letter-spacing: .12em; }
+    .floating-card strong { display: block; margin-top: 4px; font-size: .87rem; font-weight: 750; }
+    .hero-stat { display: flex; gap: 22px; margin-top: 43px; padding-top: 24px; border-top: 1px solid #dce2dc; }
+    .hero-stat-item { display: flex; align-items: baseline; gap: 8px; }
+    .hero-stat-item strong { color: var(--navy); font-size: 1.23rem; font-weight: 850; }
+    .hero-stat-item span { color: var(--muted); font-size: .75rem; }
+
+    /* Brand principle */
+    .principle { background: var(--navy); color: white; padding: 31px 0; }
+    .principle-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .principle-label { flex: 0 0 auto; color: #b5d4d1; font-size: .72rem; letter-spacing: .16em; font-weight: 800; }
+    .principle-quote { margin: 0; font-size: clamp(1.05rem, 2vw, 1.45rem); font-weight: 650; letter-spacing: -.04em; }
+    .principle-quote span { color: var(--cyan); }
+
+    /* Philosophy */
+    .philosophy { background: var(--paper); }
+    .flow-panel { position: relative; padding: 38px; background: var(--ivory); border: 1px solid #ecebe3; border-radius: var(--radius); }
+    .flow-intro { display: flex; align-items: start; justify-content: space-between; gap: 32px; margin-bottom: 32px; }
+    .flow-intro h3 { max-width: 440px; margin: 0; color: var(--navy); font-size: 1.42rem; line-height: 1.4; letter-spacing: -.045em; }
+    .flow-intro p { max-width: 435px; margin: 0; color: var(--muted); font-size: .89rem; }
+    .flow-steps { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+    .flow-step { position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 130px; padding: 15px 7px; border: 1px solid #d8e1db; border-radius: 13px; background: var(--paper); text-align: center; }
+    .flow-step:not(:last-child)::after { content: "→"; position: absolute; right: -12px; top: calc(50% - 11px); color: var(--gold); font-size: 1rem; font-weight: 800; z-index: 2; }
+    .flow-step .step-num { margin-bottom: 8px; color: #83968a; font-size: .65rem; font-weight: 800; letter-spacing: .08em; }
+    .flow-step strong { color: var(--navy); font-size: .88rem; font-weight: 800; }
+    .flow-step small { margin-top: 5px; color: var(--muted); font-size: .68rem; line-height: 1.45; }
+    .flow-step.key { background: var(--green); border-color: var(--green); }
+    .flow-step.key .step-num, .flow-step.key strong, .flow-step.key small { color: white; }
+    .philosophy-foot { display: flex; align-items: center; gap: 12px; margin-top: 24px; color: var(--muted); font-size: .83rem; }
+    .philosophy-foot strong { color: var(--green); }
+    .mini-star { color: var(--gold); font-size: 1.25rem; }
+
+    /* Courses */
+    .courses { background: #f2f4ef; }
+    .course-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .course-card { display: flex; flex-direction: column; min-height: 330px; padding: 29px 30px 27px; background: var(--paper); border: 1px solid #e1e6e0; border-radius: 17px; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+    .course-card:hover { transform: translateY(-4px); box-shadow: 0 17px 40px rgba(20,43,53,.07); border-color: #c6d7cd; }
+    .course-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 17px; }
+    .course-number { color: var(--gold); font-family: Georgia, serif; font-size: 1.5rem; }
+    .course-tag { display: inline-flex; padding: 5px 10px; border-radius: 5px; background: var(--pale-green); color: var(--green); font-size: .69rem; font-weight: 800; }
+    .course-card h3 { margin: 0 0 12px; color: var(--navy); font-size: 1.36rem; line-height: 1.4; letter-spacing: -.05em; }
+    .course-card .course-summary { margin: 0; color: var(--muted); font-size: .88rem; }
+    .course-card ul { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 9px 16px; margin: 23px 0 22px; padding: 0; list-style: none; }
+    .course-card li { position: relative; padding-left: 14px; color: #4d5f61; font-size: .78rem; }
+    .course-card li::before { content: ""; position: absolute; top: .7em; left: 0; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+    .outcome { margin-top: auto; padding: 14px 15px; border-left: 2px solid var(--green); background: #f6f7f2; color: #4b5b5a; font-size: .8rem; }
+    .outcome b { display: block; margin-bottom: 3px; color: var(--green); font-size: .69rem; letter-spacing: .08em; }
+    .course-note { margin: 22px 0 0; color: var(--muted); text-align: center; font-size: .82rem; }
+
+    /* Audience */
+    .audiences { background: var(--paper); }
+    .audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+    .audience-card { position: relative; overflow: hidden; min-height: 285px; padding: 29px 27px; background: var(--ivory); border-radius: 16px; border: 1px solid #eeece4; }
+    .audience-card::after { content: attr(data-number); position: absolute; right: 19px; bottom: -25px; color: rgba(52,93,80,.07); font-family: Georgia, serif; font-size: 8rem; line-height: 1; font-weight: 700; }
+    .audience-icon { display: grid; place-items: center; width: 43px; height: 43px; margin-bottom: 19px; color: var(--green); background: white; border: 1px solid #e0e8e1; border-radius: 13px; font-size: 1.12rem; }
+    .audience-card h3 { margin: 0 0 10px; color: var(--navy); font-size: 1.22rem; letter-spacing: -.04em; }
+    .audience-card p { position: relative; z-index: 1; margin: 0; color: var(--muted); font-size: .85rem; }
+    .audience-card .recommend { position: relative; z-index: 1; margin-top: 20px; padding-top: 16px; border-top: 1px solid #e1e3da; color: var(--green); font-size: .77rem; font-weight: 750; }
+
+    /* Method */
+    .method { background: var(--pale-green); }
+    .method-layout { display: grid; grid-template-columns: .82fr 1.18fr; gap: 74px; align-items: start; }
+    .method .section-head { margin-bottom: 0; }
+    .method-note { margin-top: 27px; padding: 18px 20px; background: rgba(255,254,250,.7); border-left: 2px solid var(--gold); color: #536563; font-size: .84rem; }
+    .method-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+    .method-step { min-height: 152px; padding: 21px 22px; background: rgba(255,254,250,.85); border: 1px solid rgba(52,93,80,.11); border-radius: 14px; }
+    .method-step .n { color: var(--gold); font-family: Georgia, serif; font-size: .94rem; }
+    .method-step h3 { margin: 8px 0 6px; color: var(--navy); font-size: 1.02rem; }
+    .method-step p { margin: 0; color: var(--muted); font-size: .79rem; }
+    .deliverables { grid-column: 1 / -1; padding: 22px 24px; color: white; background: var(--navy); border-radius: 14px; }
+    .deliverables h3 { margin: 0 0 13px; font-size: .98rem; }
+    .deliverable-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .deliverable-tags span { padding: 7px 11px; border: 1px solid rgba(255,255,255,.22); color: #e0ece9; border-radius: 5px; font-size: .72rem; }
+
+    /* About */
+    .about { background: var(--paper); }
+    .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 75px; align-items: start; }
+    .about-side { position: sticky; top: 112px; }
+    .about-graphic { position: relative; min-height: 300px; display: grid; place-items: center; overflow: hidden; background: var(--ivory); border-radius: 18px; border: 1px solid #eeece3; }
+    .about-graphic::before, .about-graphic::after { content: ""; position: absolute; border: 1px solid rgba(52,93,80,.18); border-radius: 50%; }
+    .about-graphic::before { width: 230px; height: 230px; }
+    .about-graphic::after { width: 165px; height: 165px; border-color: rgba(199,169,107,.55); }
+    .about-monogram { position: relative; z-index: 1; display: grid; place-items: center; width: 108px; height: 108px; border-radius: 50%; background: var(--navy); color: white; font-family: Georgia, serif; font-size: 2.4rem; letter-spacing: -.1em; box-shadow: 0 15px 30px rgba(20,43,53,.14); }
+    .about-graphic-label { position: absolute; left: 22px; bottom: 20px; color: var(--muted); font-size: .7rem; letter-spacing: .14em; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 15px; }
+    .about-stat { padding: 17px 19px; background: var(--navy); border-radius: 12px; color: white; }
+    .about-stat strong { display: block; font-size: 1.34rem; line-height: 1.3; }
+    .about-stat span { display: block; margin-top: 5px; color: #c5d9d5; font-size: .71rem; }
+    .about-copy .eyebrow { margin-bottom: 13px; }
+    .about-copy h2 { margin: 0 0 24px; color: var(--navy); font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.27; letter-spacing: -.06em; }
+    .about-copy > p { color: var(--muted); font-size: .95rem; }
+    .about-points { margin-top: 28px; border-top: 1px solid var(--line); }
+    .about-point { display: grid; grid-template-columns: 105px 1fr; gap: 20px; padding: 17px 0; border-bottom: 1px solid var(--line); }
+    .about-point strong { color: var(--green); font-size: .8rem; }
+    .about-point p { margin: 0; color: #536265; font-size: .84rem; }
+    .book-inline { display: flex; align-items: center; gap: 16px; margin-top: 27px; padding: 17px; background: var(--ivory); border-radius: 12px; }
+    .book-mini { display: grid; place-items: center; flex: 0 0 61px; height: 83px; padding: 8px 4px; background: var(--green); color: #f8f5e9; border-left: 4px solid var(--gold); box-shadow: 3px 4px 0 #d6d9cb; text-align: center; font-family: Georgia, "Noto Serif KR", serif; font-size: .76rem; line-height: 1.5; font-weight: 800; }
+    .book-inline strong { display: block; color: var(--navy); font-size: .94rem; }
+    .book-inline p { margin: 4px 0 0; color: var(--muted); font-size: .78rem; }
+
+    /* Book/content */
+    .content { background: var(--ivory); }
+    .content-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 50px; align-items: center; }
+    .book-display { position: relative; display: grid; place-items: center; min-height: 380px; overflow: hidden; }
+    .book-display::before { content: ""; position: absolute; width: 285px; height: 285px; border: 1px solid rgba(52,93,80,.22); border-radius: 50%; box-shadow: 0 0 0 32px rgba(52,93,80,.03), 0 0 0 68px rgba(52,93,80,.025); }
+    .book-cover { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: space-between; width: 205px; height: 292px; padding: 24px 22px; color: #f9f6e9; background: var(--green); border-left: 8px solid #28493f; box-shadow: 17px 19px 32px rgba(20,43,53,.2); transform: rotate(-6deg); }
+    .book-cover::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 3px; background: rgba(255,255,255,.22); }
+    .book-cover .cover-top { font-size: .53rem; letter-spacing: .19em; color: #d7d9ba; }
+    .book-cover .cover-title { font-family: Georgia, "Noto Serif KR", serif; font-size: 1.75rem; line-height: 1.24; letter-spacing: -.08em; font-weight: 800; }
+    .book-cover .cover-sub { margin-top: 10px; font-size: .67rem; line-height: 1.6; color: #e7e5d5; }
+    .book-cover .cover-author { padding-top: 12px; border-top: 1px solid rgba(255,255,255,.27); font-size: .65rem; letter-spacing: .08em; }
+    .content-copy h2 { margin: 14px 0 16px; color: var(--navy); font-size: clamp(2rem, 4vw, 3rem); line-height: 1.26; letter-spacing: -.06em; }
+    .content-copy > p { max-width: 600px; margin: 0; color: var(--muted); }
+    .content-list { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; margin-top: 28px; }
+    .content-item { padding: 17px 18px; background: rgba(255,254,250,.8); border: 1px solid #e7e7dd; border-radius: 11px; }
+    .content-item strong { display: block; color: var(--navy); font-size: .85rem; }
+    .content-item span { display: block; margin-top: 5px; color: var(--muted); font-size: .75rem; }
+    .content-link { display: inline-flex; gap: 8px; align-items: center; margin-top: 25px; color: var(--green); font-size: .84rem; font-weight: 800; border-bottom: 1px solid var(--green); padding-bottom: 4px; }
+    .link-note { margin-top: 10px !important; font-size: .72rem !important; }
+
+    /* FAQ */
+    .faq { background: var(--paper); }
+    .faq-grid { display: grid; grid-template-columns: .72fr 1.28fr; gap: 70px; align-items: start; }
+    .faq-grid .section-head { position: sticky; top: 115px; margin: 0; }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-question { display: flex; justify-content: space-between; align-items: center; gap: 20px; width: 100%; padding: 21px 0; border: 0; background: transparent; color: var(--navy); text-align: left; font-size: .94rem; font-weight: 780; }
+    .faq-plus { display: grid; place-items: center; flex: 0 0 29px; width: 29px; height: 29px; border: 1px solid var(--line); color: var(--green); border-radius: 50%; font-size: 1.12rem; transition: transform .2s, background .2s; }
+    .faq-question[aria-expanded="true"] .faq-plus { transform: rotate(45deg); background: var(--pale-green); }
+    .faq-answer { padding: 0 40px 21px 0; color: var(--muted); font-size: .85rem; }
+    .faq-answer[hidden] { display: none; }
+
+    /* Contact */
+    .contact { position: relative; overflow: hidden; background: var(--navy); color: white; }
+    .contact::before { content: ""; position: absolute; width: 530px; height: 530px; border: 1px solid rgba(117,200,208,.17); border-radius: 50%; right: -170px; top: -190px; box-shadow: 0 0 0 46px rgba(117,200,208,.025), 0 0 0 95px rgba(117,200,208,.02); }
+    .contact .eyebrow { color: var(--cyan); }
+    .contact .section-head h2 { color: white; }
+    .contact .section-head p { color: #bdccce; }
+    .contact-layout { position: relative; display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: start; }
+    .contact-copy { position: sticky; top: 110px; }
+    .contact-copy .contact-big { margin: 0 0 20px; color: white; font-size: clamp(2rem, 4vw, 3.15rem); letter-spacing: -.06em; line-height: 1.28; }
+    .contact-copy .contact-desc { max-width: 450px; color: #bdccce; font-size: .94rem; }
+    .contact-perks { display: grid; gap: 12px; margin-top: 31px; }
+    .contact-perks div { display: flex; align-items: center; gap: 11px; color: #e0e9e8; font-size: .82rem; }
+    .check-mark { display: grid; place-items: center; width: 22px; height: 22px; border: 1px solid rgba(117,200,208,.5); border-radius: 50%; color: var(--cyan); font-size: .7rem; }
+    .contact-form-wrap { padding: 30px; background: var(--paper); color: var(--ink); border-radius: 18px; box-shadow: 0 22px 55px rgba(0,0,0,.17); }
+    .form-head { margin-bottom: 21px; }
+    .form-head h3 { margin: 0; color: var(--navy); font-size: 1.28rem; }
+    .form-head p { margin: 5px 0 0; color: var(--muted); font-size: .78rem; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { color: #35494c; font-size: .77rem; font-weight: 750; }
+    .field input, .field select, .field textarea { width: 100%; min-width: 0; border: 1px solid #d9e1dc; border-radius: 8px; padding: 12px 13px; color: var(--ink); background: white; outline: none; font-size: .83rem; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(52,93,80,.1); }
+    .field textarea { resize: vertical; min-height: 116px; }
+    .field small { color: #788687; font-size: .69rem; }
+    .form-consent { display: flex; align-items: start; gap: 9px; margin: 17px 0; color: var(--muted); font-size: .73rem; }
+    .form-consent input { margin-top: 5px; accent-color: var(--green); }
+    .form-submit { width: 100%; border: 0; }
+    .form-disclaimer { margin: 13px 0 0; color: #718081; font-size: .69rem; line-height: 1.6; }
+    .draft-result { display: none; margin-top: 19px; padding-top: 20px; border-top: 1px solid var(--line); }
+    .draft-result.visible { display: block; }
+    .draft-result h4 { margin: 0 0 8px; color: var(--navy); font-size: .9rem; }
+    .draft-result p { margin: 0 0 10px; color: var(--muted); font-size: .75rem; }
+    .draft-result textarea { width: 100%; min-height: 155px; padding: 12px; border: 1px solid #d9e1dc; border-radius: 8px; font-size: .77rem; color: var(--ink); }
+    .draft-actions { display: flex; gap: 9px; margin-top: 9px; }
+    .draft-actions .btn { min-height: 42px; padding: 9px 14px; font-size: .78rem; }
+    .form-status { margin: 12px 0 0; color: var(--green); font-size: .78rem; font-weight: 700; }
+    .form-status.error { color: #a9433b; }
+    .final-line { position: relative; margin-top: 75px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,.18); color: #e8eeeb; text-align: center; font-family: Georgia, "Noto Serif KR", serif; font-size: clamp(1.13rem, 2.2vw, 1.65rem); letter-spacing: -.035em; }
+    .final-line span { color: var(--cyan); }
+
+    footer { padding: 26px 0; background: #10242c; color: #aabbbd; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-brand { display: flex; align-items: center; gap: 10px; color: #f1f3eb; font-weight: 800; }
+    .footer-brand .brand-mark { width: 29px; height: 29px; font-size: .88rem; background: #31544a; }
+    .footer-note { margin: 0; font-size: .69rem; text-align: right; }
+
+    @media (max-width: 980px) {
+      .nav-menu { gap: 17px; }
+      .nav-menu a { font-size: .8rem; }
+      .nav-cta { display: none; }
+      .hero-grid { gap: 32px; }
+      .hero-visual { min-height: 400px; }
+      .visual-orbit { width: 350px; height: 350px; }
+      .flow-panel { padding: 27px; }
+      .flow-steps { grid-template-columns: repeat(4, 1fr); }
+      .flow-step:nth-child(4)::after { display: none; }
+      .method-layout, .about-grid { gap: 40px; }
+      .contact-layout { gap: 35px; }
+    }
+    @media (max-width: 760px) {
+      .container { width: min(100% - 36px, var(--max)); }
+      .section { padding: 78px 0; }
+      .section-head { margin-bottom: 31px; }
+      .nav-wrap { min-height: 68px; }
+      .menu-toggle { display: inline-flex; }
+      .nav-menu { display: none; position: absolute; top: 68px; left: 0; right: 0; padding: 10px 18px 20px; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 18px 25px rgba(20,43,53,.08); flex-direction: column; align-items: stretch; gap: 0; }
+      .nav-menu.open { display: flex; }
+      .nav-menu a { padding: 12px 3px; border-bottom: 1px solid #edf0eb; font-size: .91rem; }
+      .nav-menu a:last-child { border-bottom: 0; }
+      .hero { padding: 58px 0 56px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 24px; }
+      .hero-copy { padding: 0; }
+      .hero h1 { font-size: clamp(2.55rem, 10vw, 4.1rem); }
+      .hero-lead { font-size: 1rem; }
+      .hero-visual { min-height: 360px; margin-top: 0; }
+      .visual-orbit { width: 320px; height: 320px; }
+      .note-sheet { width: min(310px, 82%); padding: 23px; }
+      .floating-card { right: 0; bottom: 18px; }
+      .hero-stat { margin-top: 26px; gap: 15px; }
+      .hero-stat-item { gap: 5px; flex-wrap: wrap; }
+      .hero-stat-item strong { font-size: 1.1rem; }
+      .hero-stat-item span { font-size: .69rem; }
+      .principle-inner { align-items: start; flex-direction: column; gap: 9px; }
+      .principle { padding: 24px 0; }
+      .flow-panel { padding: 22px 17px; }
+      .flow-intro { flex-direction: column; gap: 12px; margin-bottom: 23px; }
+      .flow-intro h3 { font-size: 1.2rem; }
+      .flow-steps { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .flow-step { min-height: 105px; }
+      .flow-step::after { display: none !important; }
+      .course-grid { grid-template-columns: 1fr; gap: 14px; }
+      .course-card { min-height: auto; padding: 24px; }
+      .course-card ul { gap: 8px 12px; }
+      .audience-grid { grid-template-columns: 1fr; gap: 13px; }
+      .audience-card { min-height: auto; padding: 24px; }
+      .method-layout { grid-template-columns: 1fr; gap: 30px; }
+      .method-steps { gap: 10px; }
+      .method-step { min-height: 140px; padding: 17px; }
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-side { position: static; }
+      .about-graphic { min-height: 240px; }
+      .about-graphic::before { width: 190px; height: 190px; }
+      .about-graphic::after { width: 140px; height: 140px; }
+      .about-copy h2 { font-size: 2.2rem; }
+      .about-point { grid-template-columns: 88px 1fr; gap: 13px; }
+      .content-grid { grid-template-columns: 1fr; gap: 25px; }
+      .book-display { min-height: 325px; }
+      .content-copy h2 { font-size: 2.2rem; }
+      .content-list { gap: 10px; }
+      .faq-grid { grid-template-columns: 1fr; gap: 27px; }
+      .faq-grid .section-head { position: static; }
+      .contact-layout { grid-template-columns: 1fr; gap: 34px; }
+      .contact-copy { position: static; }
+      .contact-copy .contact-big { font-size: 2.25rem; }
+      .contact-form-wrap { padding: 23px 18px; }
+      .final-line { margin-top: 52px; }
+      .footer-inner { align-items: start; flex-direction: column; }
+      .footer-note { text-align: left; }
+    }
+    @media (max-width: 420px) {
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .btn { width: 100%; }
+      .hero-visual { min-height: 330px; }
+      .visual-orbit { width: 280px; height: 280px; }
+      .note-sheet { width: 82%; }
+      .floating-card { max-width: 165px; padding: 12px 14px; }
+      .hero-stat { gap: 12px; }
+      .course-card ul { grid-template-columns: 1fr; }
+      .method-steps { grid-template-columns: 1fr; }
+      .deliverables { padding: 19px; }
+      .content-list { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .draft-actions { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+
+    /* ===== Responsive refinement: premium typography and touch-friendly spacing ===== */
+    html { font-size: 17px; scroll-padding-top: 96px; }
+    body { line-height: 1.78; letter-spacing: -.012em; }
+    .container { width: min(var(--max), calc(100% - 64px)); }
+    .section { padding-block: clamp(84px, 8vw, 124px); }
+    .section-head { max-width: 760px; margin-bottom: clamp(32px, 4vw, 50px); }
+    .section-head h2 { font-size: clamp(2.15rem, 3.55vw, 3.25rem); line-height: 1.22; }
+    .section-head p { font-size: clamp(1rem, 1.3vw, 1.12rem); line-height: 1.8; }
+    .eyebrow { font-size: .82rem; letter-spacing: .13em; }
+    .btn { min-height: 54px; padding: 14px 24px; font-size: .98rem; }
+    .hero { padding-block: clamp(76px, 8vw, 110px); }
+    .hero h1 { font-size: clamp(3rem, 5.15vw, 4.85rem); line-height: 1.17; }
+    .hero-lead { font-size: clamp(1.08rem, 1.55vw, 1.23rem); line-height: 1.82; }
+    .hero-desc { font-size: 1rem; line-height: 1.85; }
+    .hero-kicker { font-size: .84rem; }
+    .hero-note { font-size: .86rem; }
+    .hero-stat-item strong { font-size: 1.3rem; }
+    .hero-stat-item span { font-size: .82rem; }
+    .principle-label { font-size: .79rem; }
+    .principle-quote { line-height: 1.65; }
+    .flow-intro p, .flow-step small { font-size: .82rem; }
+    .flow-step strong { font-size: 1.03rem; }
+    .course-card { padding: clamp(25px, 2.6vw, 34px); }
+    .course-card h3 { font-size: 1.35rem; line-height: 1.4; }
+    .course-card .course-desc { font-size: .96rem; line-height: 1.8; }
+    .course-card li { font-size: .9rem; line-height: 1.65; }
+    .course-top .course-tag, .course-top .course-number { font-size: .8rem; }
+    .outcome { font-size: .91rem; line-height: 1.7; }
+    .outcome b { font-size: .78rem; }
+    .course-note { font-size: .9rem; }
+    .audience-card h3 { font-size: 1.3rem; }
+    .audience-card p { font-size: .96rem; line-height: 1.8; }
+    .audience-card .recommend { font-size: .88rem; line-height: 1.7; }
+    .method-note { font-size: .95rem; line-height: 1.8; }
+    .method-step { padding: 24px; }
+    .method-step h3 { font-size: 1.12rem; }
+    .method-step p { font-size: .9rem; line-height: 1.75; }
+    .deliverables h3 { font-size: 1.08rem; }
+    .deliverable-tags span { font-size: .82rem; }
+    .about-copy > p { font-size: 1rem; line-height: 1.9; }
+    .about-point strong { font-size: .9rem; }
+    .about-point p { font-size: .93rem; line-height: 1.8; }
+    .about-stat strong { font-size: 1.48rem; }
+    .about-stat span { font-size: .8rem; }
+    .book-inline strong { font-size: 1rem; }
+    .book-inline p { font-size: .88rem; line-height: 1.7; }
+    .content-copy > p { font-size: 1rem; line-height: 1.9; }
+    .content-item strong { font-size: .97rem; }
+    .content-item span { font-size: .86rem; line-height: 1.7; }
+    .content-link { font-size: .95rem; }
+    .link-note { font-size: .82rem !important; line-height: 1.7; }
+    .faq-question { font-size: 1.02rem; line-height: 1.65; padding-block: 23px; }
+    .faq-answer { font-size: .96rem; line-height: 1.85; }
+    .contact-copy .contact-desc { font-size: 1rem; line-height: 1.85; }
+    .contact-perks div { font-size: .92rem; }
+    .form-head h3 { font-size: 1.38rem; }
+    .form-head p { font-size: .9rem; line-height: 1.7; }
+    .field label { font-size: .9rem; }
+    .field input, .field select, .field textarea { padding: 14px 15px; font-size: .95rem; min-height: 49px; }
+    .field textarea { min-height: 130px; }
+    .field small, .form-consent, .form-disclaimer { font-size: .82rem; line-height: 1.7; }
+    .form-status { font-size: .9rem; line-height: 1.7; }
+    .final-line { line-height: 1.8; }
+    .footer-note { font-size: .82rem; line-height: 1.75; }
+    .back-to-top {
+      position: fixed; right: max(22px, env(safe-area-inset-right)); bottom: max(22px, env(safe-area-inset-bottom));
+      z-index: 150; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-width: 88px; min-height: 54px; padding: 13px 18px; border: 1px solid rgba(255,255,255,.22);
+      border-radius: 999px; background: rgba(20,43,53,.96); color: #fffefa;
+      box-shadow: 0 10px 30px rgba(20,43,53,.22); font-size: .94rem; font-weight: 800;
+      letter-spacing: -.02em; cursor: pointer; backdrop-filter: blur(12px);
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .back-to-top:hover { transform: translateY(-3px); background: var(--green); box-shadow: 0 14px 34px rgba(20,43,53,.27); }
+    .back-to-top:active { transform: translateY(0); }
+    .back-to-top svg { width: 17px; height: 17px; flex: 0 0 auto; }
+
+    @media (min-width: 761px) and (max-width: 1024px) {
+      html { font-size: 16px; }
+      .container { width: min(var(--max), calc(100% - 48px)); }
+      .nav-menu { gap: clamp(10px, 1.35vw, 16px); }
+      .nav-menu a { font-size: .81rem; white-space: nowrap; }
+      .nav-cta { display: none; }
+      .hero-grid { grid-template-columns: 1fr .9fr; gap: 24px; }
+      .hero h1 { font-size: clamp(2.9rem, 5vw, 4rem); }
+      .hero-visual { min-height: 370px; }
+      .visual-orbit { width: min(34vw, 340px); height: min(34vw, 340px); }
+      .note-sheet { width: min(320px, 90%); }
+      .floating-card { right: -2px; bottom: 19px; }
+      .method-layout, .about-grid { gap: 34px; }
+      .faq-grid { gap: 40px; }
+      .contact-layout { gap: 32px; }
+    }
+    @media (max-width: 760px) {
+      html { font-size: 16px; scroll-padding-top: 82px; }
+      .container { width: calc(100% - 36px); }
+      .section { padding-block: 76px; }
+      .section-head { margin-bottom: 30px; }
+      .section-head h2 { font-size: clamp(2rem, 6.5vw, 2.65rem); }
+      .section-head p { font-size: 1rem; }
+      .hero { padding-block: 54px 50px; }
+      .hero h1 { font-size: clamp(2.45rem, 9vw, 3.75rem); line-height: 1.2; }
+      .hero-lead { font-size: 1.05rem; }
+      .hero-desc { font-size: .98rem; }
+      .hero-visual { min-height: clamp(300px, 78vw, 370px); }
+      .visual-orbit { width: min(78vw, 320px); height: min(78vw, 320px); }
+      .note-sheet { width: min(310px, 84%); }
+      .floating-card { right: 2px; bottom: 10px; }
+      .hero-stat { align-items: flex-start; flex-wrap: wrap; row-gap: 13px; }
+      .hero-stat-item { max-width: 100%; }
+      .hero-stat-item strong { font-size: 1.12rem; }
+      .hero-stat-item span { font-size: .79rem; }
+      .principle-quote { font-size: 1.1rem; }
+      .course-card h3 { font-size: 1.28rem; }
+      .audience-card p, .course-card li, .method-step p, .about-copy > p, .about-point p,
+      .content-copy > p, .faq-answer { font-size: .94rem; }
+      .method-step { min-height: 0; }
+      .contact-copy .contact-big { font-size: clamp(2rem, 7vw, 2.4rem); }
+      .contact-form-wrap { padding: 25px 20px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .field input, .field select, .field textarea { font-size: 16px; }
+      .back-to-top { right: max(15px, env(safe-area-inset-right)); bottom: max(15px, env(safe-area-inset-bottom)); min-width: 78px; min-height: 50px; padding: 11px 15px; font-size: .9rem; }
+    }
+    @media (max-width: 420px) {
+      .container { width: calc(100% - 30px); }
+      .section { padding-block: 66px; }
+      .hero h1 { font-size: clamp(2.18rem, 8.8vw, 2.7rem); }
+      .hero-kicker { font-size: .78rem; }
+      .hero-visual { min-height: 305px; }
+      .visual-orbit { width: 265px; height: 265px; }
+      .note-sheet { width: 85%; padding: 20px; }
+      .sheet-title { font-size: 1.4rem; }
+      .sheet-row { font-size: .75rem; }
+      .floating-card { max-width: 158px; padding: 11px 12px; }
+      .floating-card strong { font-size: .8rem; }
+      .hero-stat { display: grid; grid-template-columns: 1fr; }
+      .about-point { grid-template-columns: 1fr; gap: 5px; }
+      .content-list { grid-template-columns: 1fr; }
+      .book-display { min-height: 290px; }
+      .back-to-top { min-width: 74px; min-height: 48px; right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="동감 홈페이지 첫 화면">
+        <span class="brand-mark" aria-hidden="true">dg</span>
+        <span><span class="brand-name">동감</span><span class="brand-sub">Record · Think · Grow</span></span>
+      </a>
+      <nav class="nav-menu" id="primary-navigation" aria-label="주요 메뉴">
+        <a href="#philosophy">브랜드 철학</a>
+        <a href="#courses">강의 분야</a>
+        <a href="#audiences">교육 대상</a>
+        <a href="#about">강사 소개</a>
+        <a href="#content">저서·콘텐츠</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="#contact">강의 문의 <span class="arrow" aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-controls="primary-navigation" aria-expanded="false">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="hero-kicker">RECORD · THINK · ACT</div>
+          <h1>기록으로 생각을<br><em>구조화하고,</em><br>생각으로 변화를<br>설계하다.</h1>
+          <p class="hero-lead">기록의 기술부터 사고력 훈련까지.<br>생각을 발견하고, 구조화하고, 실행으로 연결합니다.</p>
+          <p class="hero-desc">동감은 기록과 사고를 연결해 개인의 성장과 업무 역량을 돕는 실천형 교육 브랜드입니다.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#courses">강의 분야 살펴보기 <span class="arrow" aria-hidden="true">↓</span></a>
+            <a class="btn btn-light" href="#contact">강의 문의하기 <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-stat" aria-label="강사 전문성 요약">
+            <div class="hero-stat-item"><strong>24년</strong><span>기획·전략 실무 경험</span></div>
+            <div class="hero-stat-item"><strong>기록 × 사고</strong><span>교육의 연결점</span></div>
+            <div class="hero-stat-item"><strong>『다이어리 레버리지』</strong><span>저서</span></div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="기록에서 사고와 실행으로 이어지는 과정을 표현한 그래픽">
+          <div class="visual-orbit" aria-hidden="true"><span class="orbit-dot"></span></div>
+          <div class="note-sheet">
+            <div class="sheet-top"><span>MY THINKING NOTE / 01</span><span class="sheet-symbol" aria-hidden="true">✳</span></div>
+            <div class="sheet-title">좋은 질문은<br>어디에서 시작될까?</div>
+            <div class="sheet-row"><span class="sheet-num">01</span><span>관찰한 사실을 적는다</span><span class="sheet-line"></span></div>
+            <div class="sheet-row"><span class="sheet-num">02</span><span>생각 사이의 관계를 찾는다</span><span class="sheet-line"></span></div>
+            <div class="sheet-row"><span class="sheet-num">03</span><span>핵심 질문을 남긴다</span><span class="sheet-line"></span></div>
+            <span class="sheet-tag">RECORD → THINK</span>
+          </div>
+          <div class="floating-card"><small>FROM THOUGHT TO ACTION</small><strong>생각을 실행 가능한<br>다음 단계로</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="principle" aria-label="브랜드 핵심 메시지">
+      <div class="container principle-inner">
+        <div class="principle-label">THE DONGGAM APPROACH</div>
+        <p class="principle-quote">기록은 생각을 붙잡는 도구이고, <span>사고는 기록을 통해 발전합니다.</span></p>
+      </div>
+    </div>
+
+    <section class="section philosophy" id="philosophy">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">WHY RECORD & THINK</span>
+          <h2>기록은 저장에서 끝나지 않습니다.<br>생각을 움직이는 출발점입니다.</h2>
+          <p>막연한 생각을 기록하고, 기록을 연결해 구조를 발견하고, 질문을 통해 핵심을 찾습니다. 그 과정에서 판단의 근거를 만들고 다음 행동을 설계할 수 있습니다.</p>
+        </div>
+        <div class="flow-panel">
+          <div class="flow-intro">
+            <h3>기록에서 성찰까지,<br>생각이 성장하는 하나의 흐름</h3>
+            <p>기록 자체가 정답을 주는 것은 아닙니다. 관찰과 질문, 구조화와 점검을 더할 때 기록은 더 나은 판단과 실행을 돕는 도구가 됩니다.</p>
+          </div>
+          <div class="flow-steps" aria-label="기록에서 성찰까지의 7단계">
+            <div class="flow-step"><span class="step-num">STEP 01</span><strong>기록</strong><small>생각과 사실을 붙잡기</small></div>
+            <div class="flow-step"><span class="step-num">STEP 02</span><strong>관찰</strong><small>상황을 구체적으로 보기</small></div>
+            <div class="flow-step key"><span class="step-num">STEP 03</span><strong>구조화</strong><small>관계와 패턴 찾기</small></div>
+            <div class="flow-step"><span class="step-num">STEP 04</span><strong>사고</strong><small>질문하고 해석하기</small></div>
+            <div class="flow-step"><span class="step-num">STEP 05</span><strong>판단</strong><small>근거를 바탕으로 선택하기</small></div>
+            <div class="flow-step"><span class="step-num">STEP 06</span><strong>실행</strong><small>다음 행동을 설계하기</small></div>
+            <div class="flow-step"><span class="step-num">STEP 07</span><strong>성찰</strong><small>배움을 다음에 연결하기</small></div>
+          </div>
+          <div class="philosophy-foot"><span class="mini-star" aria-hidden="true">✳</span><span><strong>동감의 관점</strong> — 기록하는 습관을 넘어, 기록을 활용하는 사고의 방법을 익힙니다.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section courses" id="courses">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">LECTURE PROGRAMS</span>
+          <h2>기록에서 문제 해결까지,<br>목적에 맞는 강의를 설계합니다.</h2>
+          <p>일상의 기록 습관부터 업무에 필요한 사고력과 기획 역량까지. 교육 대상과 기관의 목표에 맞춰 주제와 실습을 조정합니다.</p>
+        </div>
+        <div class="course-grid">
+          <article class="course-card">
+            <div class="course-top"><span class="course-number">01</span><span class="course-tag">기록 습관 · 시스템</span></div>
+            <h3>일상을 바꾸는 기록의 기술</h3>
+            <p class="course-summary">기록의 목적을 이해하고, 지속 가능한 나만의 기록 시스템을 설계합니다.</p>
+            <ul><li>기록의 목적과 원리</li><li>지속 가능한 기록 습관</li><li>기록 주제와 방식 설계</li><li>아날로그·디지털 기록</li><li>목표 관리와 점검</li></ul>
+            <div class="outcome"><b>학습 결과 예시</b>자신의 목적과 생활 방식에 맞는 기록 시스템 설계안</div>
+          </article>
+          <article class="course-card">
+            <div class="course-top"><span class="course-number">02</span><span class="course-tag">사고력 · 표현력</span></div>
+            <h3>기록으로 키우는 생각의 힘</h3>
+            <p class="course-summary">기록을 활용해 생각을 발견하고, 연결하고, 논리적으로 표현하는 방법을 익힙니다.</p>
+            <ul><li>생각과 경험 기록하기</li><li>질문으로 생각 확장하기</li><li>기록 분류와 핵심 찾기</li><li>생각 구조화와 논리 표현</li><li>판단과 행동에 연결하기</li></ul>
+            <div class="outcome"><b>학습 결과 예시</b>자신의 생각을 정리하고 표현하는 개인별 방법</div>
+          </article>
+          <article class="course-card">
+            <div class="course-top"><span class="course-number">03</span><span class="course-tag">기획력 · 문제 해결</span></div>
+            <h3>기록을 활용한 기획력과 문제 해결</h3>
+            <p class="course-summary">복잡한 상황을 구조화하고 핵심 이슈를 찾아 해결 방향을 설계합니다.</p>
+            <ul><li>문제와 목표 정의</li><li>복잡한 상황 구조화</li><li>핵심 이슈 선정과 분석</li><li>논리적인 해결 방향</li><li>실행 계획과 점검</li></ul>
+            <div class="outcome"><b>학습 결과 예시</b>실제 업무나 과제에 적용하는 문제 해결 구조와 실행 계획</div>
+          </article>
+          <article class="course-card">
+            <div class="course-top"><span class="course-number">04</span><span class="course-tag">목표 관리 · 성장</span></div>
+            <h3>기록을 활용한 목표 관리와 자기 성장</h3>
+            <p class="course-summary">목표와 실행을 기록하고 점검해 배움을 축적하는 관리 체계를 만듭니다.</p>
+            <ul><li>목표를 구체화하는 기록</li><li>일간·주간 실행 계획</li><li>진행 상황과 결과 점검</li><li>경험에서 배울 점 찾기</li><li>개선 방향 설계</li></ul>
+            <div class="outcome"><b>학습 결과 예시</b>목표와 실행을 지속적으로 점검하는 개인 관리 체계</div>
+          </article>
+        </div>
+        <p class="course-note">강의 시간, 난이도, 실습 비중과 결과물은 교육 목적 및 대상에 따라 협의할 수 있습니다.</p>
+      </div>
+    </section>
+
+    <section class="section audiences" id="audiences">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">WHO IT IS FOR</span>
+          <h2>조직의 역량부터 개인의 성장까지,<br>배움의 목적에 맞춰 함께합니다.</h2>
+          <p>기업교육과 공공·평생교육의 목표는 다를 수 있습니다. 교육 대상과 현장의 필요를 먼저 이해하고 적합한 강의 방향을 제안합니다.</p>
+        </div>
+        <div class="audience-grid">
+          <article class="audience-card" data-number="01">
+            <div class="audience-icon" aria-hidden="true">◫</div>
+            <h3>기업교육 담당자</h3>
+            <p>임직원의 기획력, 논리적 사고, 문제 해결과 기록 기반 업무 관리 역량을 강화하고 싶은 조직을 위한 프로그램입니다.</p>
+            <div class="recommend">추천 주제 · 기획력과 문제 해결 / 업무 기록 시스템</div>
+          </article>
+          <article class="audience-card" data-number="02">
+            <div class="audience-icon" aria-hidden="true">▤</div>
+            <h3>공공기관 · 평생교육기관</h3>
+            <p>성인 학습자가 기록 습관을 만들고, 자신의 생각과 경험을 정리하며 일상에 적용하도록 돕습니다.</p>
+            <div class="recommend">추천 주제 · 일상을 바꾸는 기록 / 생각의 힘</div>
+          </article>
+          <article class="audience-card" data-number="03">
+            <div class="audience-icon" aria-hidden="true">◎</div>
+            <h3>중장년 · 일반 성인 학습자</h3>
+            <p>경험을 정리하고 목표를 새롭게 설정하거나, 생각을 더 명확하게 표현하고 싶은 학습자를 위한 강의입니다.</p>
+            <div class="recommend">추천 주제 · 목표 관리와 자기 성장 / 기록 시스템</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section method" id="method">
+      <div class="container method-layout">
+        <div class="section-head">
+          <span class="eyebrow">LEARNING EXPERIENCE</span>
+          <h2>듣고 끝나는 강의보다,<br>직접 만들어 보는 배움.</h2>
+          <p>개념을 이해하고 자신의 상황을 관찰한 뒤, 직접 기록하고 구조화해 실제 업무와 일상에 적용하는 흐름으로 구성합니다.</p>
+          <div class="method-note">실습 양식과 결과물은 강의 주제, 운영 시간, 교육 대상에 따라 달라집니다. 구체적인 제공 범위는 강의 협의 과정에서 안내합니다.</div>
+        </div>
+        <div class="method-steps">
+          <article class="method-step"><span class="n">01 / UNDERSTAND</span><h3>이해</h3><p>기록과 사고의 원리, 활용 목적을 이해합니다.</p></article>
+          <article class="method-step"><span class="n">02 / OBSERVE</span><h3>관찰</h3><p>자신의 기록 습관과 사고 방식을 돌아봅니다.</p></article>
+          <article class="method-step"><span class="n">03 / PRACTICE</span><h3>실습</h3><p>안내된 방법과 양식을 직접 적용해 봅니다.</p></article>
+          <article class="method-step"><span class="n">04 / STRUCTURE</span><h3>구조화</h3><p>기록에서 핵심과 관계를 찾아 생각을 정리합니다.</p></article>
+          <article class="method-step"><span class="n">05 / APPLY</span><h3>적용</h3><p>자신의 업무나 일상에 맞는 방법을 설계합니다.</p></article>
+          <article class="method-step"><span class="n">06 / REFLECT</span><h3>점검</h3><p>적용 결과를 되돌아보고 개선점을 도출합니다.</p></article>
+          <div class="deliverables">
+            <h3>프로그램에 따라 다룰 수 있는 결과물</h3>
+            <div class="deliverable-tags"><span>개인 기록 시스템 설계안</span><span>주간·월간 점검 양식</span><span>생각 구조화 템플릿</span><span>문제 해결 프레임워크</span><span>실행 계획 및 점검 양식</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="about-side">
+          <div class="about-graphic" aria-label="동감 브랜드를 상징하는 추상 그래픽">
+            <div class="about-monogram" aria-hidden="true">dg</div>
+            <span class="about-graphic-label">RECORD · THINK · GROW</span>
+          </div>
+          <div class="about-stats">
+            <div class="about-stat"><strong>24년</strong><span>대기업 기획·전략 실무 경험</span></div>
+            <div class="about-stat"><strong>1권</strong><span>저서 『다이어리 레버리지』</span></div>
+          </div>
+        </div>
+        <div class="about-copy">
+          <span class="eyebrow">ABOUT THE INSTRUCTOR</span>
+          <h2>기록과 사고를<br>실무와 일상에 연결하다.</h2>
+          <p>동감은 대기업에서 24년간 기획과 전략 업무를 경험하며 복잡한 문제를 구조화하고, 핵심 이슈를 찾고, 해결 방향을 설계해 온 경험을 기록과 사고 교육에 연결합니다.</p>
+          <p>기록은 정보를 쌓아 두는 데서 끝나지 않습니다. 사실과 생각을 구분하고, 질문을 던지고, 핵심을 발견하는 데 활용할 수 있습니다. 이러한 관점을 바탕으로 학습자가 자신에게 필요한 기록 방법과 사고의 틀을 직접 익히도록 돕습니다.</p>
+          <div class="about-points">
+            <div class="about-point"><strong>실무 경험</strong><p>전략기획, 신사업, 투자 및 M&A, 합작사업, 사업관리 등 다양한 업무에서 쌓은 문제 구조화와 의사결정 경험.</p></div>
+            <div class="about-point"><strong>교육 관점</strong><p>기록을 관찰과 구조화의 도구로 활용하고, 생각을 판단과 실행으로 연결하는 실천 중심의 접근.</p></div>
+            <div class="about-point"><strong>학습 방식</strong><p>핵심 개념 설명에 더해 직접 작성하고 질문하고 적용하는 과정을 통해 자신에게 맞는 방법을 설계.</p></div>
+          </div>
+          <div class="book-inline">
+            <div class="book-mini" aria-hidden="true">다이어리<br>레버리지</div>
+            <div><strong>저서 『다이어리 레버리지』</strong><p>기록 시스템과 목표 관리, 기록을 통한 성장에 관한 탐구를 책과 콘텐츠로 나눕니다.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section content" id="content">
+      <div class="container content-grid">
+        <div class="book-display" aria-label="『다이어리 레버리지』를 소개하기 위한 표지 스타일 그래픽">
+          <div class="book-cover">
+            <div class="cover-top">RECORDING FOR GROWTH</div>
+            <div><div class="cover-title">다이어리<br>레버리지</div><div class="cover-sub">기록을 통해 일과 삶을<br>성장시키는 방법</div></div>
+            <div class="cover-author">동감 · 이종익</div>
+          </div>
+        </div>
+        <div class="content-copy">
+          <span class="eyebrow">BOOKS & CONTENTS</span>
+          <h2>기록과 사고를 탐구하고<br>나누는 콘텐츠.</h2>
+          <p>기록의 의미부터 기록 시스템, 목표 관리와 개인의 성장까지. 강의와 글, 실습 자료를 통해 기록을 일과 삶에 활용하는 방법을 이어서 탐구합니다.</p>
+          <div class="content-list">
+            <div class="content-item"><strong>기록과 사고에 관한 글</strong><span>기록의 관점과 생각을 확장하는 질문</span></div>
+            <div class="content-item"><strong>기록 방법과 활용 사례</strong><span>일상과 업무에 적용하는 기록 방법</span></div>
+            <div class="content-item"><strong>강의와 워크북</strong><span>실습 중심 프로그램과 학습 자료</span></div>
+            <div class="content-item"><strong>기록 템플릿</strong><span>향후 소개할 기록 및 사고 훈련 양식</span></div>
+          </div>
+          <a class="content-link" href="#contact">콘텐츠 및 강의 자료 문의 <span aria-hidden="true">↗</span></a>
+          <p class="link-note">이 페이지의 책 표지는 실제 도서 표지 이미지가 아닌 시안용 그래픽입니다. 블로그 「동감의 기록과 생각」 및 「읽을거리, 기록거리」 연결 주소와 함께 실제 자료 확정 후 교체합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="container faq-grid">
+        <div class="section-head">
+          <span class="eyebrow">FREQUENTLY ASKED QUESTIONS</span>
+          <h2>강의 의뢰 전,<br>자주 묻는 질문.</h2>
+          <p>교육의 목적과 운영 조건에 따라 세부 내용은 달라질 수 있습니다. 아래 안내 외의 문의도 편하게 남겨주세요.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>기록 경험이 없는 초보자도 참여할 수 있나요?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="faq-answer" hidden>네. 기록을 처음 시작하는 학습자도 참여할 수 있도록 목적과 기본 원리부터 다룰 수 있습니다. 참여자의 경험 수준에 맞춰 실습 난이도와 진행 방식을 협의합니다.</div></div>
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>기업교육과 평생교육기관 강의를 모두 의뢰할 수 있나요?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="faq-answer" hidden>가능합니다. 기업에는 기획력·문제 해결·업무 기록 활용을, 공공기관과 평생교육기관에는 기록 습관·생각의 구조화·목표 관리 등을 중심으로 제안할 수 있습니다.</div></div>
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>강의 시간과 프로그램을 조정할 수 있나요?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="faq-answer" hidden>교육 대상, 목표, 운영 시간과 실습 비중에 따라 구성을 협의할 수 있습니다. 확정된 조건은 문의 내용을 확인한 뒤 별도로 안내합니다.</div></div>
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>실습용 기록 양식과 템플릿이 제공되나요?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="faq-answer" hidden>강의 주제와 구성에 따라 실습에 필요한 양식이나 템플릿을 활용할 수 있습니다. 제공 여부와 범위는 해당 프로그램의 설계 및 협의 과정에서 확정합니다.</div></div>
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>기록과 사고 강의는 일반적인 자기계발 강의와 어떤 차이가 있나요?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="faq-answer" hidden>동감의 강의는 기록 습관 자체에 머무르지 않고, 기록을 통해 생각을 관찰하고 구조화하며 문제와 목표를 구체화하는 방법을 다룹니다. 강의 목적에 따라 실제 적용과 점검까지 연결합니다.</div></div>
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>강의 소개서와 구체적인 프로그램은 어떻게 요청하나요?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="faq-answer" hidden>아래 문의 양식에 기관과 교육 목적, 희망 주제를 남겨주세요. 현재 페이지 시안은 실제 발송 시스템과 연결되어 있지 않으므로, 양식에서 문의 내용을 정리해 복사한 뒤 확정된 연락 채널로 전달할 수 있습니다.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-copy">
+            <span class="eyebrow">LET'S TALK</span>
+            <h2 class="contact-big">기관의 목적에 맞는<br>기록과 사고 강의를<br>함께 설계합니다.</h2>
+            <p class="contact-desc">기업교육부터 공공기관과 평생교육 프로그램까지. 교육 대상과 목표를 바탕으로 강의 주제, 실습 내용, 학습 결과물을 협의합니다.</p>
+            <div class="contact-perks">
+              <div><span class="check-mark" aria-hidden="true">✓</span><span>교육 목적과 대상에 맞춘 주제 협의</span></div>
+              <div><span class="check-mark" aria-hidden="true">✓</span><span>개념 설명과 실습을 연결하는 학습 구성</span></div>
+              <div><span class="check-mark" aria-hidden="true">✓</span><span>강의 소개서 및 운영 조건 문의</span></div>
+            </div>
+          </div>
+          <div class="contact-form-wrap">
+            <div class="form-head"><h3>강의 문의 및 소개서 요청</h3><p>* 표시는 필수 항목입니다. 문의 내용을 정리해 전달할 수 있습니다.</p></div>
+            <form id="inquiry-form" novalidate>
+              <div class="form-grid">
+                <div class="field"><label for="org">기관명 또는 소속 *</label><input id="org" name="org" autocomplete="organization" required placeholder="예: ○○기업 / ○○기관"></div>
+                <div class="field"><label for="person">담당자명 *</label><input id="person" name="person" autocomplete="name" required placeholder="성함을 입력해 주세요"></div>
+                <div class="field"><label for="contact-method">이메일 또는 연락처 *</label><input id="contact-method" name="contact" required placeholder="회신받을 연락 수단"></div>
+                <div class="field"><label for="inquiry-type">문의 유형 *</label><select id="inquiry-type" name="type" required><option value="">선택해 주세요</option><option>기업교육</option><option>공공기관</option><option>평생교육</option><option>개인 강의</option><option>강의 소개서 요청</option><option>기타</option></select></div>
+                <div class="field"><label for="topic">희망 강의 주제</label><select id="topic" name="topic"><option value="">선택해 주세요</option><option>일상을 바꾸는 기록의 기술</option><option>기록으로 키우는 생각의 힘</option><option>기록을 활용한 기획력과 문제 해결</option><option>기록을 활용한 목표 관리와 자기 성장</option><option>협의 후 제안 희망</option></select></div>
+                <div class="field"><label for="audience">교육 대상 및 예상 인원</label><input id="audience" name="audience" placeholder="예: 임직원 20명 / 성인 학습자"></div>
+                <div class="field"><label for="date">희망 일정</label><input id="date" name="date" placeholder="예: 2026년 12월 중"></div>
+                <div class="field full"><label for="message">문의 내용</label><textarea id="message" name="message" placeholder="교육 목적, 희망 시간, 기타 요청 사항을 적어주세요."></textarea></div>
+              </div>
+              <label class="form-consent"><input type="checkbox" id="privacy" required><span>문의 내용 정리에 필요한 정보 입력에 동의합니다. 이 시안은 입력 정보를 서버로 전송하거나 저장하지 않습니다. 실제 운영 시 개인정보 처리방침과 동의문을 별도로 확정해야 합니다.</span></label>
+              <button class="btn btn-primary form-submit" type="submit">문의 내용 정리하기 <span class="arrow" aria-hidden="true">↗</span></button>
+              <p class="form-disclaimer">현재 독립 실행형 시안으로, 문의가 자동 접수되거나 이메일이 발송되지는 않습니다. 아래에서 생성된 내용을 복사해 실제 연락 채널로 전달할 수 있습니다.</p>
+              <div class="draft-result" id="draft-result" aria-live="polite">
+                <h4>전달할 문의 내용</h4>
+                <p>아래 내용을 복사해 담당자에게 전달하세요.</p>
+                <textarea id="draft-text" aria-label="정리된 문의 내용" readonly></textarea>
+                <div class="draft-actions"><button class="btn btn-primary" id="copy-draft" type="button">내용 복사하기</button><button class="btn btn-light" id="edit-draft" type="button">입력 내용 수정</button></div>
+              </div>
+              <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+        <div class="final-line">기록은 생각을 발견하는 시작이고,<br><span>사고는 변화를 만들어 가는 과정입니다.</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand"><span class="brand-mark" aria-hidden="true">dg</span><span>동감 · 기록과 사고</span></div>
+      <p class="footer-note">기록으로 생각을 구조화하고, 생각으로 변화를 설계합니다.<br>연락처 · 블로그 · 외부 링크는 실제 정보 확정 후 연결됩니다.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="페이지 맨 위로 이동" title="맨 위로 이동">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>맨위</span>
+  </button>
+
+  <script>
+    (() => {
+      const topButton = document.querySelector('.back-to-top');
+      topButton.addEventListener('click', () => {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+      });
+
+      const menuButton = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('.nav-menu');
+      menuButton.addEventListener('click', () => {
+        const isOpen = menu.classList.toggle('open');
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+        menuButton.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
+      });
+      menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+        menu.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', '메뉴 열기');
+      }));
+
+      document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+          const isExpanded = button.getAttribute('aria-expanded') === 'true';
+          button.setAttribute('aria-expanded', String(!isExpanded));
+          button.nextElementSibling.hidden = isExpanded;
+        });
+      });
+
+      const form = document.getElementById('inquiry-form');
+      const status = document.getElementById('form-status');
+      const result = document.getElementById('draft-result');
+      const draft = document.getElementById('draft-text');
+      const formValues = () => ({
+        '기관명 또는 소속': document.getElementById('org').value.trim(),
+        '담당자명': document.getElementById('person').value.trim(),
+        '이메일 또는 연락처': document.getElementById('contact-method').value.trim(),
+        '문의 유형': document.getElementById('inquiry-type').value,
+        '희망 강의 주제': document.getElementById('topic').value || '미정',
+        '교육 대상 및 예상 인원': document.getElementById('audience').value.trim() || '미기재',
+        '희망 일정': document.getElementById('date').value.trim() || '미정',
+        '문의 내용': document.getElementById('message').value.trim() || '별도 기재 없음'
+      });
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        status.textContent = '';
+        status.classList.remove('error');
+        if (!form.reportValidity()) {
+          status.textContent = '필수 항목을 확인해 주세요.';
+          status.classList.add('error');
+          return;
+        }
+        const values = formValues();
+        const lines = ['[동감 강의 문의]', ''];
+        Object.entries(values).forEach(([label, value]) => lines.push(`${label}: ${value}`));
+        lines.push('', '※ 홈페이지 시안에서 작성한 문의 내용입니다. 실제 접수는 별도 연락 채널을 통해 진행해야 합니다.');
+        draft.value = lines.join('\n');
+        result.classList.add('visible');
+        status.textContent = '문의 내용이 정리되었습니다. 아직 자동 발송되지는 않습니다.';
+        result.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });
+      });
+      document.getElementById('copy-draft').addEventListener('click', async () => {
+        status.classList.remove('error');
+        try {
+          await navigator.clipboard.writeText(draft.value);
+          status.textContent = '문의 내용을 클립보드에 복사했습니다.';
+        } catch (error) {
+          draft.focus();
+          draft.select();
+          status.textContent = '자동 복사가 제한되어 있습니다. 선택된 내용을 Ctrl+C 또는 ⌘+C로 복사해 주세요.';
+        }
+      });
+      document.getElementById('edit-draft').addEventListener('click', () => {
+        result.classList.remove('visible');
+        status.textContent = '입력 내용을 수정한 뒤 다시 정리할 수 있습니다.';
+        document.getElementById('org').focus();
+      });
+    })();
+  </script>
+</body>
+</html>
